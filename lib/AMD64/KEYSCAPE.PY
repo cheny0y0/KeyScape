@@ -30,7 +30,10 @@ try :
     score = 0
     destTime = time.time() + userTime
     while True :
-        os.system("cls")
+        if os.name == "nt" :
+            os.system("cls")
+        else :
+            os.system("clear")
         key = random.randint(0,9)
         if key == 0 :
             print("---------------------\n|1|2|3|4|5|6|7|8|9|0|\n--------------\
@@ -40,10 +43,19 @@ try :
             print("---------------------\n|1|2|3|4|5|6|7|8|9|0|\n--------------\
 -------\n|"+" |"*(key-1)+"X"+"| "*(10-key)+"|\n---------------------\nRemaining\
  Time: "+str(round(destTime-time.time(),1))+" Score: "+str(score))
-        os.system("choice /c:"+str(key)+" /n")
+        if os.name == "nt" :
+            os.system("choice /c:"+str(key)+" /n")
+        else :
+            os.system("mkdir /tmp/pyscript")
+            tty = open("/tmp/pyscript/presskey.sh","w")
+            tty.write('tempans=tty\nwhile [ "$tempans" != "'+str(key)+'" ]; do \
+read -n 1 tempans; done')
+            tty.close()
+            if os.system("bash /tmp/pyscript/presskey.sh") == 2 :
+                raise KeyboardInterrupt
         score += 1
         if destTime - time.time() < 0.0 :
-            print("Time is up! Your score is: "+str(score))
+            print("\nTime is up! Your score is: "+str(score))
             try :
                 raw_input
             except NameError :
