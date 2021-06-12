@@ -2,7 +2,8 @@ KeyScape README File
 
 THIS IS A FREE SOFTWARE.
 
-KeyScape v0.1 Release Log
+KeyScape v0.1.1 Release Log
+This is a bugfix version of v0.1.
 KeyScape can be installed on MS-DOS, Windows NT or Linux.
 KeyScape can be run on Python 2.1 or later (even you are using Python 3.x only)
 
