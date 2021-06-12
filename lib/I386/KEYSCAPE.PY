@@ -59,9 +59,58 @@ read -n 1 tempans; done')
             try :
                 raw_input
             except NameError :
-                input("Press enter to exit...")
+                historyFile = input("Would you like to append your history scor\
+e?(Input file location to append, or enter for none)")
             else :
-                raw_input("Press enter to exit...")
+                historyFile = raw_input("Would you like to append your history \
+score?(Input file location to append, or enter for none)")
+            if historyFile.strip() != "" :
+                if os.name == "nt" :
+                    tty = "\\".join(historyFile.split("\\")[:-1])
+                else :
+                    tty = "/".join(historyFile.split("/")[:-1])
+                os.system('mkdir "'+tty+'"')
+                try :
+                    open(historyFile,"r").close()
+                except :
+                    try :
+                        open(historyFile,"x").close()
+                    except :
+                        print("An error occured!")
+                    else :
+                        tty = open(historyFile,"r")
+                        history = tty.read()
+                        tty.close()
+                        tty = open(historyFile,"w")
+                        tty.write(history)
+                        try :
+                            raw_input
+                        except NameError :
+                            tty.write(time.strftime("%Y-%m-%d-%H:%M:%S")+" Seco\
+nd:"+str(userTime)+" Score:"+str(score)+" "+input("More comments for the histor\
+y?")+"\n")
+                        else :
+                            tty.write(time.strftime("%Y-%m-%d-%H:%M:%S")+" Seco\
+nd:"+str(userTime)+" Score:"+str(score)+" "+raw_input("More comments for the hi\
+story?")+"\n")
+                        tty.close()
+                else :
+                    tty = open(historyFile,"r")
+                    history = tty.read()
+                    tty.close()
+                    tty = open(historyFile,"w")
+                    tty.write(history)
+                    try :
+                        raw_input
+                    except NameError :
+                        tty.write(time.strftime("%Y-%m-%d-%H:%M:%S")+" Second:\
+"+str(userTime)+" Score:"+str(score)+" "+input("More comments for the history?\
+")+"\n")
+                    else :
+                        tty.write(time.strftime("%Y-%m-%d-%H:%M:%S")+" Second:\
+"+str(userTime)+" Score:"+str(score)+" "+raw_input("More comments for the histo\
+ry?")+"\n")
+                    tty.close()
             break
 except KeyboardInterrupt :
     print("USER EXITED FORCIBLY.")
