@@ -4,7 +4,7 @@ import sys
 import time
 
 try :
-    while True :
+    while 1 :
         try :
             raw_input
         except NameError :
@@ -29,7 +29,7 @@ except KeyboardInterrupt :
 try :
     score = 0
     destTime = time.time() + userTime
-    while True :
+    while 1 :
         if os.name == "nt" :
             os.system("cls")
         else :
