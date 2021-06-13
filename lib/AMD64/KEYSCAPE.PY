@@ -36,13 +36,55 @@ try :
             os.system("clear")
         key = random.randint(0,9)
         if key == 0 :
-            print("---------------------\n|1|2|3|4|5|6|7|8|9|0|\n--------------\
--------\n| | | | | | | | | |X|\n---------------------\nRemaining Time: "+str(
+            print("=====================\n|1|2|3|4|5|6|7|8|9|0|\n| | | | | | | \
+| | |X|\n=====================\n|7|8|9|\n| | | |\n-------\n|4|5|6|\n| | | |\n--\
+-----\n|1|2|3|\n| | | |\n-------\n  |0|\n  |X|\n  ===\nRemaining Time: "+str(
     round(destTime-time.time(),1))+" Score: "+str(score))
-        else :
-            print("---------------------\n|1|2|3|4|5|6|7|8|9|0|\n--------------\
--------\n|"+" |"*(key-1)+"X"+"| "*(10-key)+"|\n---------------------\nRemaining\
- Time: "+str(round(destTime-time.time(),1))+" Score: "+str(score))
+        if key == 1 :
+            print("=====================\n|1|2|3|4|5|6|7|8|9|0|\n|X| | | | | | \
+| | | |\n=====================\n|7|8|9|\n| | | |\n-------\n|4|5|6|\n| | | |\n--\
+-----\n|1|2|3|\n|X| | |\n-------\n  |0|\n  | |\n  ===\nRemaining Time: "+str(
+    round(destTime-time.time(),1))+" Score: "+str(score))
+        if key == 2 :
+            print("=====================\n|1|2|3|4|5|6|7|8|9|0|\n| |X| | | | | \
+| | | |\n=====================\n|7|8|9|\n| | | |\n-------\n|4|5|6|\n| | | |\n--\
+-----\n|1|2|3|\n| |X| |\n-------\n  |0|\n  | |\n  ===\nRemaining Time: "+str(
+    round(destTime-time.time(),1))+" Score: "+str(score))
+        if key == 3 :
+            print("=====================\n|1|2|3|4|5|6|7|8|9|0|\n| | |X| | | | \
+| | | |\n=====================\n|7|8|9|\n| | | |\n-------\n|4|5|6|\n| | | |\n--\
+-----\n|1|2|3|\n| | |X|\n-------\n  |0|\n  | |\n  ===\nRemaining Time: "+str(
+    round(destTime-time.time(),1))+" Score: "+str(score))
+        if key == 4 :
+            print("=====================\n|1|2|3|4|5|6|7|8|9|0|\n| | | |X| | | \
+| | | |\n=====================\n|7|8|9|\n| | | |\n-------\n|4|5|6|\n|X| | |\n--\
+-----\n|1|2|3|\n| | | |\n-------\n  |0|\n  | |\n  ===\nRemaining Time: "+str(
+    round(destTime-time.time(),1))+" Score: "+str(score))
+        if key == 5 :
+            print("=====================\n|1|2|3|4|5|6|7|8|9|0|\n| | | | |X| | \
+| | | |\n=====================\n|7|8|9|\n| | | |\n-------\n|4|5|6|\n| |X| |\n--\
+-----\n|1|2|3|\n| | | |\n-------\n  |0|\n  | |\n  ===\nRemaining Time: "+str(
+    round(destTime-time.time(),1))+" Score: "+str(score))
+        if key == 6 :
+            print("=====================\n|1|2|3|4|5|6|7|8|9|0|\n| | | | | |X| \
+| | | |\n=====================\n|7|8|9|\n| | | |\n-------\n|4|5|6|\n| | |X|\n--\
+-----\n|1|2|3|\n| | | |\n-------\n  |0|\n  | |\n  ===\nRemaining Time: "+str(
+    round(destTime-time.time(),1))+" Score: "+str(score))
+        if key == 7 :
+            print("=====================\n|1|2|3|4|5|6|7|8|9|0|\n| | | | | | |X\
+| | | |\n=====================\n|7|8|9|\n|X| | |\n-------\n|4|5|6|\n| | | |\n--\
+-----\n|1|2|3|\n| | | |\n-------\n  |0|\n  | |\n  ===\nRemaining Time: "+str(
+    round(destTime-time.time(),1))+" Score: "+str(score))
+        if key == 8 :
+            print("=====================\n|1|2|3|4|5|6|7|8|9|0|\n| | | | | | | \
+|X| | |\n=====================\n|7|8|9|\n| |X| |\n-------\n|4|5|6|\n| | | |\n--\
+-----\n|1|2|3|\n| | | |\n-------\n  |0|\n  | |\n  ===\nRemaining Time: "+str(
+    round(destTime-time.time(),1))+" Score: "+str(score))
+        if key == 9 :
+            print("=====================\n|1|2|3|4|5|6|7|8|9|0|\n| | | | | | | \
+| |X| |\n=====================\n|7|8|9|\n| | |X|\n-------\n|4|5|6|\n| | | |\n--\
+-----\n|1|2|3|\n| | | |\n-------\n  |0|\n  | |\n  ===\nRemaining Time: "+str(
+    round(destTime-time.time(),1))+" Score: "+str(score))
         if os.name == "nt" :
             os.system("choice /c:"+str(key)+" /n")
         else :
