@@ -2,8 +2,8 @@ KeyScape README File
 
 THIS IS A FREE SOFTWARE.
 
-KeyScape v0.2.1 Release Log
-Add number keys area(a.k.a. "little" keys area) support.
+KeyScape v0.2.1.012 Release Log
+Fix the bool error of python 2.6.x or lower.
 
 KeyScape can be installed on MS-DOS, Windows NT or Linux.
 KeyScape can be run on Python 2.1 or later (even you are using Python 3.x only)
